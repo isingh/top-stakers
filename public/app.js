@@ -53,6 +53,7 @@
           '<td class="apy-col"><span class="apy-value">' + partner.apy.toFixed(1) + '%</span></td>' +
           '<td class="delegators-col">' + formatNumber(partner.delegators) + '</td>' +
           '<td class="commission-col">' + partner.commission + '%</td>' +
+          '<td class="view-col"><span class="view-link">VIEW <span class="chevron">&#8250;</span></span></td>' +
         '</tr>';
     });
 
