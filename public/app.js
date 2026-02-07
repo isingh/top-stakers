@@ -33,6 +33,7 @@
   }
 
   function formatDate(dateStr) {
+    if (!dateStr) return "\u2014";
     var d = new Date(dateStr);
     return d.toLocaleDateString("en-US", { year: "numeric", month: "short" });
   }
@@ -74,8 +75,8 @@
     tbody.innerHTML = html;
   }
 
-  function init() {
-    var stakers = TOP_STAKERS.slice().sort(function (a, b) {
+  function render(stakers, source) {
+    stakers.sort(function (a, b) {
       return b.amountStaked - a.amountStaked;
     });
 
@@ -87,6 +88,28 @@
       month: "long",
       day: "numeric",
     });
+
+    var sourceEl = document.getElementById("data-source");
+    if (sourceEl) {
+      sourceEl.textContent = source === "static"
+        ? "Data is for illustration purposes only."
+        : "Live data powered by " + source + ".";
+    }
+  }
+
+  function init() {
+    fetch("/api/stakers")
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.stakers && data.stakers.length > 0) {
+          render(data.stakers, data.source || "API");
+        } else {
+          render(TOP_STAKERS.slice(), "static");
+        }
+      })
+      .catch(function () {
+        render(TOP_STAKERS.slice(), "static");
+      });
   }
 
   init();
