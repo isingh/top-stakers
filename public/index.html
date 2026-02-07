@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top Staking Partners</title>
+  <title>Top Stakers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
 <body>
   <header>
     <div class="container">
-      <h1>Top Staking Partners</h1>
-      <p class="subtitle">Trusted validators and staking providers ranked by total stake</p>
+      <h1>Top Stakers</h1>
+      <p class="subtitle">Individual wallets ranked by total amount staked</p>
     </div>
   </header>
 
@@ -24,29 +24,28 @@
         <span class="stat-label">Total Staked</span>
       </div>
       <div class="stat">
-        <span class="stat-value" id="partner-count">-</span>
-        <span class="stat-label">Partners</span>
+        <span class="stat-value" id="staker-count">-</span>
+        <span class="stat-label">Stakers</span>
       </div>
       <div class="stat">
-        <span class="stat-value" id="avg-apy">-</span>
-        <span class="stat-label">Avg APY</span>
+        <span class="stat-value" id="total-validators">-</span>
+        <span class="stat-label">Validators</span>
       </div>
     </div>
 
     <div class="table-wrapper">
-      <table class="partners-table">
+      <table class="stakers-table">
         <thead>
           <tr>
             <th class="rank-col">#</th>
-            <th class="name-col">Partner</th>
-            <th class="stake-col">Total Staked</th>
-            <th class="apy-col">APY</th>
-            <th class="delegators-col">Delegators</th>
-            <th class="commission-col">Commission</th>
+            <th class="name-col">Wallet</th>
+            <th class="stake-col">Amount Staked</th>
+            <th class="since-col">Staking Since</th>
+            <th class="validators-col">Validators</th>
             <th class="view-col"></th>
           </tr>
         </thead>
-        <tbody id="partners-body">
+        <tbody id="stakers-body">
         </tbody>
       </table>
     </div>
