@@ -135,7 +135,7 @@ header h1 {
 }
 
 /* Table */
-.partners-table {
+.stakers-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -145,11 +145,11 @@ header h1 {
   overflow: hidden;
 }
 
-.partners-table thead {
+.stakers-table thead {
   background: #fafbfc;
 }
 
-.partners-table th {
+.stakers-table th {
   padding: 12px 20px;
   text-align: left;
   font-size: 0.7rem;
@@ -160,7 +160,7 @@ header h1 {
   border-bottom: 1px solid var(--border);
 }
 
-.partners-table td {
+.stakers-table td {
   padding: 14px 20px;
   border-bottom: 1px solid var(--border-light);
   font-size: 0.9rem;
@@ -168,33 +168,31 @@ header h1 {
   transition: background 0.15s ease;
 }
 
-.partners-table tbody tr:last-child td {
+.stakers-table tbody tr:last-child td {
   border-bottom: none;
 }
 
-.partners-table tbody tr {
+.stakers-table tbody tr {
   transition: background 0.15s ease;
 }
 
-.partners-table tbody tr:hover {
+.stakers-table tbody tr:hover {
   background: #f9fafb;
 }
 
-.partners-table tbody tr:hover td {
+.stakers-table tbody tr:hover td {
   color: var(--text);
 }
 
 .rank-col { width: 56px; text-align: center; }
 .stake-col,
-.apy-col,
-.delegators-col,
-.commission-col { text-align: right; }
+.since-col,
+.validators-col { text-align: right; }
 
-.partners-table td.rank-col { text-align: center; }
-.partners-table td.stake-col,
-.partners-table td.apy-col,
-.partners-table td.delegators-col,
-.partners-table td.commission-col {
+.stakers-table td.rank-col { text-align: center; }
+.stakers-table td.stake-col,
+.stakers-table td.since-col,
+.stakers-table td.validators-col {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
@@ -228,14 +226,14 @@ header h1 {
   color: var(--text-muted);
 }
 
-/* Partner name cell */
-.partner-name {
+/* Staker name cell */
+.staker-name {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-.partner-logo {
+.staker-avatar {
   width: 38px;
   height: 38px;
   border-radius: 50%;
@@ -251,32 +249,27 @@ header h1 {
   letter-spacing: -0.2px;
 }
 
-.partner-info {
+.staker-info {
   display: flex;
   flex-direction: column;
   gap: 1px;
 }
 
-.partner-label {
+.staker-label {
   font-weight: 600;
   color: var(--text);
   font-size: 0.9rem;
 }
 
-.partner-network {
+.staker-network {
   font-size: 0.75rem;
   color: var(--text-muted);
   font-weight: 400;
-}
-
-/* APY highlight */
-.apy-value {
-  color: var(--green);
-  font-weight: 600;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
 }
 
 /* Stake value */
-.partners-table td.stake-col {
+.stakers-table td.stake-col {
   font-weight: 600;
   color: var(--text);
 }
@@ -286,7 +279,7 @@ header h1 {
   text-align: right;
 }
 
-.partners-table td.view-col {
+.stakers-table td.view-col {
   text-align: right;
 }
 
@@ -311,7 +304,7 @@ header h1 {
   transition: transform 0.15s ease;
 }
 
-.partners-table tbody tr:hover .view-link {
+.stakers-table tbody tr:hover .view-link {
   opacity: 1;
 }
 
@@ -347,19 +340,19 @@ footer {
     padding: 16px 20px;
   }
 
-  .delegators-col,
-  .commission-col,
+  .since-col,
+  .validators-col,
   .view-col {
     display: none;
   }
 
-  .partners-table th,
-  .partners-table td {
+  .stakers-table th,
+  .stakers-table td {
     padding: 12px 12px;
     font-size: 0.85rem;
   }
 
-  .partner-logo { display: none; }
+  .staker-avatar { display: none; }
 
   .table-wrapper {
     padding: 4px;
