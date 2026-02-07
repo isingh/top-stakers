@@ -15,6 +15,18 @@
     return address.slice(0, 6) + "..." + address.slice(-4);
   }
 
+  function getRatedUrl(staker) {
+    var wallet = staker.wallet;
+    var network = (staker.network || "").toLowerCase();
+    if (network === "ethereum") {
+      return "https://explorer.rated.network/o/" + encodeURIComponent(wallet) + "?network=mainnet&timeWindow=30d&idType=depositAddress";
+    }
+    if (network === "solana") {
+      return "https://explorer.rated.network/authority/" + encodeURIComponent(wallet) + "?network=solana&timeWindow=30d";
+    }
+    return null;
+  }
+
   function getInitials(staker) {
     if (staker.name) {
       return staker.name
@@ -55,6 +67,10 @@
       var rank = i + 1;
       var displayName = staker.name || truncateWallet(staker.wallet);
       var subtitle = staker.name ? truncateWallet(staker.wallet) : staker.network;
+      var ratedUrl = getRatedUrl(staker);
+      var viewCell = ratedUrl
+        ? '<td class="view-col"><a class="view-link" href="' + ratedUrl + '" target="_blank" rel="noopener noreferrer">VIEW <span class="chevron">&#8250;</span></a></td>'
+        : '<td class="view-col"></td>';
       html +=
         '<tr>' +
           '<td class="rank-col"><span class="rank-badge ' + rankClass(rank) + '">' + rank + '</span></td>' +
@@ -68,7 +84,7 @@
           '<td class="stake-col">' + formatUSD(staker.amountStaked) + '</td>' +
           '<td class="since-col">' + formatDate(staker.stakedSince) + '</td>' +
           '<td class="validators-col">' + formatNumber(staker.validators) + '</td>' +
-          '<td class="view-col"><span class="view-link">VIEW <span class="chevron">&#8250;</span></span></td>' +
+          viewCell +
         '</tr>';
     });
 

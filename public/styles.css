@@ -284,6 +284,12 @@ header h1 {
 }
 
 /* View link */
+a.view-link,
+a.view-link:visited {
+  color: var(--text);
+  text-decoration: none;
+}
+
 .view-link {
   display: inline-flex;
   align-items: center;
