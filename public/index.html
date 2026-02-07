@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Staking Partners</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Top Staking Partners</h1>
+      <p class="subtitle">Trusted validators and staking providers ranked by total stake</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-value" id="total-staked">-</span>
+        <span class="stat-label">Total Staked</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="partner-count">-</span>
+        <span class="stat-label">Partners</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="avg-apy">-</span>
+        <span class="stat-label">Avg APY</span>
+      </div>
+    </div>
+
+    <table class="partners-table">
+      <thead>
+        <tr>
+          <th class="rank-col">#</th>
+          <th class="name-col">Partner</th>
+          <th class="stake-col">Total Staked</th>
+          <th class="apy-col">APY</th>
+          <th class="delegators-col">Delegators</th>
+          <th class="commission-col">Commission</th>
+        </tr>
+      </thead>
+      <tbody id="partners-body">
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Data is for illustration purposes only. Last updated: <span id="last-updated"></span></p>
+    </div>
+  </footer>
+
+  <script src="/data.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
