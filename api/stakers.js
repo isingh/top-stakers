@@ -39,9 +39,7 @@ module.exports = async function handler(req, res) {
           op.displayName && op.displayName !== op.id
             ? op.displayName
             : null,
-        network: "Ethereum",
         amountStaked: Math.round(op.validatorCount * 32 * ethPrice),
-        stakedSince: null,
         validators: op.validatorCount,
       };
     });
