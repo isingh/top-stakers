@@ -186,12 +186,12 @@ header h1 {
 
 .rank-col { width: 56px; text-align: center; }
 .stake-col,
-.since-col,
+.eth-col,
 .validators-col { text-align: right; }
 
 .stakers-table td.rank-col { text-align: center; }
 .stakers-table td.stake-col,
-.stakers-table td.since-col,
+.stakers-table td.eth-col,
 .stakers-table td.validators-col {
   text-align: right;
   font-variant-numeric: tabular-nums;
@@ -346,7 +346,7 @@ footer {
     padding: 16px 20px;
   }
 
-  .since-col,
+  .eth-col,
   .validators-col,
   .view-col {
     display: none;
